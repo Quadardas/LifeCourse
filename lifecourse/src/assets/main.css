@@ -1,0 +1,21 @@
+@import "./base.css";
+@font-face {
+  font-family: "Iris Normal";
+  src: url("../lifecourse/src/fonts/iris_normal.eot"); /* IE 9 Compatibility Mode */
+  src: url("../lifecourse/src/fonts/iris_normal.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE < 9 */ url("../lifecourse/src/fonts/iris_normal.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */ url("../lifecourse/src/fonts/iris_normal.woff")
+      format("woff"),
+    /* Firefox >= 3.6, any other modern browser */
+      url("../lifecourse/src/fonts/iris_normal.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+      url("../lifecourse/src/fonts/iris_normal.svg#iris_normal") format("svg"); /* Chrome < 4, Legacy iOS */
+}
+
+#app {
+  height: 100%;
+  font-weight: normal;
+  background-color: #b4ad91;
+}
