@@ -23,6 +23,8 @@ header {
 }
 
 .wrapper {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  height: 100%;
 }
 </style>

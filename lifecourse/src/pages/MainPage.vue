@@ -22,8 +22,17 @@
         <div class="user__avatar">
           <img src="../img/no-avatar.png" alt="" />
         </div>
-        <div class="user__name">Имя пользователя</div>
-        <div class="user__group">группа</div>
+        <div class="user__info--text">
+          <div class="user__name">Имя пользователя</div>
+          <div class="user__group">группа</div>
+        </div>
+      </div>
+      <div class="post__image">
+        <img src="../img/no-image.png" alt="" />
+      </div>
+      <div class="post__footer">
+        <div class="about__post">О публикации</div>
+        <div class="post__tag">#раздел</div>
       </div>
     </div>
     <div class="post">
@@ -31,17 +40,17 @@
         <div class="user__avatar">
           <img src="../img/no-avatar.png" alt="" />
         </div>
-        <div class="user__name">Имя пользователя</div>
-        <div class="user__group">группа</div>
-      </div>
-    </div>
-    <div class="post">
-      <div class="user__info">
-        <div class="user__avatar">
-          <img src="../img/no-avatar.png" alt="" />
+        <div class="user__info--text">
+          <div class="user__name">Имя пользователя</div>
+          <div class="user__group">группа</div>
         </div>
-        <div class="user__name">Имя пользователя</div>
-        <div class="user__group">группа</div>
+      </div>
+      <div class="post__image">
+        <img src="../img/no-image.png" alt="" />
+      </div>
+      <div class="post__footer">
+        <div class="about__post">О публикации</div>
+        <div class="post__tag">#раздел</div>
       </div>
     </div>
   </div>
@@ -51,6 +60,7 @@
 <style lang="scss" scoped>
 .nav__box {
   background-color: #fff;
+  width: 100%;
   max-width: 190px;
   margin: 20px 20px;
   border-radius: 20px;
@@ -85,6 +95,19 @@
           height: 50px;
         }
       }
+    }
+    .post__image {
+      width: 350px;
+      height: 350px;
+
+      img {
+        width: 350px;
+        height: 350px;
+      }
+    }
+    .post__footer {
+      margin-top: 5px;
+      margin-left: 20px;
     }
   }
 }
