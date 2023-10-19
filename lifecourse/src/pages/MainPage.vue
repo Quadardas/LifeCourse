@@ -2,8 +2,8 @@
   <div class="navigation">
     <div class="nav__box">
       <nav class="nav__items">
-        <a href="">главная</a>
-        <a href="">профиль</a>
+        <a href="/main">главная</a>
+        <a href="/profile">профиль</a>
         <a href="">рейтинг</a>
         <a href="">чаты</a>
         <a href="">вакансии</a>

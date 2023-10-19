@@ -14,8 +14,11 @@
       url("../lifecourse/src/fonts/iris_normal.svg#iris_normal") format("svg"); /* Chrome < 4, Legacy iOS */
 }
 
+body {
+  height: 100%;
+  background-color: #b4ad91;
+}
 #app {
   height: 100%;
   font-weight: normal;
-  background-color: #b4ad91;
 }

@@ -14,7 +14,7 @@
           <label>Пароль</label>
           <input required placeholder="" />
         </div>
-        <button type="submit">Войти</button>
+        <button type="submit" @click="buttonClick">Войти</button>
       </form>
       <div class="reg__btn">Зарегистрироваться</div>
     </div>
@@ -25,10 +25,14 @@ import { reactive, ref } from "vue";
 
 import { useRouter } from "vue-router";
 
+const router = useRouter();
 const userLogin = reactive({
   login: "",
   password: "",
 });
+const buttonClick = () => {
+  router.push("/main");
+};
 </script>
 
 <style lang="scss" scoped>

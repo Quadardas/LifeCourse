@@ -5,7 +5,12 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
+import { onBeforeMount } from "vue";
+import { RouterLink, RouterView, useRouter } from "vue-router";
+const router = useRouter();
+onBeforeMount(() => {
+  router.push("/login");
+});
 </script>
 <style lang="scss" scoped>
 header {
