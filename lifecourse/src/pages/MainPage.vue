@@ -53,6 +53,42 @@
         <div class="post__tag">#раздел</div>
       </div>
     </div>
+    <div class="post">
+      <div class="user__info">
+        <div class="user__avatar">
+          <img src="../img/no-avatar.png" alt="" />
+        </div>
+        <div class="user__info--text">
+          <div class="user__name">Имя пользователя</div>
+          <div class="user__group">группа</div>
+        </div>
+      </div>
+      <div class="post__image">
+        <img src="../img/no-image.png" alt="" />
+      </div>
+      <div class="post__footer">
+        <div class="about__post">О публикации</div>
+        <div class="post__tag">#раздел</div>
+      </div>
+    </div>
+    <div class="post">
+      <div class="user__info">
+        <div class="user__avatar">
+          <img src="../img/no-avatar.png" alt="" />
+        </div>
+        <div class="user__info--text">
+          <div class="user__name">Имя пользователя</div>
+          <div class="user__group">группа</div>
+        </div>
+      </div>
+      <div class="post__image">
+        <img src="../img/no-image.png" alt="" />
+      </div>
+      <div class="post__footer">
+        <div class="about__post">О публикации</div>
+        <div class="post__tag">#раздел</div>
+      </div>
+    </div>
   </div>
 </template>
 
