@@ -23,12 +23,12 @@
           <img src="../img/no-avatar.png" alt="" />
         </div>
         <div class="user__info--text">
-          <div class="user__name">Имя пользователя</div>
-          <div class="user__surname">Фамилия пользователя</div>
+          <div class="user__name">**Имя пользователя**</div>
+          <div class="user__surname">**Фамилия пользователя**</div>
           <div class="educ__info">
-            <div class="user__facult">Факультет</div>
-            <div class="user__cours">Курс</div>
-            <div class="user__group">группа</div>
+            <div class="user__facult">**Факультет**</div>
+            <div class="user__cours">**Курс**</div>
+            <div class="user__group">**группа**</div>
           </div>
         </div>
       </div>

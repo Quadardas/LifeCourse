@@ -10,10 +10,10 @@ const router = createRouter({
       component: () => import("../pages/LoginPage.vue"),
     },
     {
-      path: "/main",
-      name: "main",
+      path: "/feed",
+      name: "feed",
 
-      component: () => import("../pages/MainPage.vue"),
+      component: () => import("../pages/FeedPage.vue"),
     },
     {
       path: "/profile",
