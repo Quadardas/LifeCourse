@@ -1,32 +1,26 @@
 <template>
-  <header>Life <img src="../src/img/logo.png" alt="" /> Course</header>
-  <div class="wrapper">
-    <RouterView />
+  <div>
+    <Header />
+
+    <div class="wrapper">
+      <RouterView />
+    </div>
   </div>
 </template>
 <script setup lang="ts">
 import { onBeforeMount } from "vue";
 import { RouterLink, RouterView, useRouter } from "vue-router";
+import router from "./router";
+import Header from "./components/Header.vue";
+function toMainPage() {
+  router.push("/main");
+}
 // const router = useRouter();
 // onBeforeMount(() => {
 //   router.push("/login");
 // });
 </script>
 <style lang="scss" scoped>
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 1.5;
-  max-height: 100px;
-  background-color: #fff;
-  font-size: 20px;
-  img {
-    width: 50px;
-    height: 50px;
-  }
-}
-
 .wrapper {
   display: grid;
   grid-auto-flow: column;

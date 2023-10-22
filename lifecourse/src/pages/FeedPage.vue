@@ -1,24 +1,8 @@
 <template>
   <div class="container">
-    <div class="navigation">
-      <div class="nav__box">
-        <nav class="nav__items">
-          <a href="/feed">главная</a>
-          <a href="/profile">профиль</a>
-          <a href="">рейтинг</a>
-          <a href="">чаты</a>
-          <a href="">вакансии</a>
-        </nav>
-      </div>
-      <div class="nav__box">
-        <nav class="nav__items">
-          <a href="">поддержка</a>
-          <a href="">маркет</a>
-        </nav>
-      </div>
-    </div>
+    <NavBar />
     <div class="post__feed">
-      <div class="post">
+      <div class="post" v-for="post in posts" :key="post.id" :post="post">
         <div class="user__info">
           <div class="user__avatar">
             <img src="../img/no-avatar.png" alt="" />
@@ -37,14 +21,20 @@
               </template></modal
             >
           </div>
+          <div class="user__stars">
+            10
+            <img src="../img/icons/star.jpg" alt="" />
+          </div>
         </div>
         <div class="post__image">
           <img src="../img/no-image.png" alt="" />
         </div>
+        <div class="about__post">
+          {{ post.body }}
+        </div>
         <div class="post__footer">
-          <div class="about__post">**Описание публикации**</div>
           <div class="post__tag">#спортивные достижения</div>
-          <div class="date__post">Дата публикации: 01.01.2023</div>
+          <div class="date__post">01.01.2023</div>
         </div>
       </div>
     </div>
@@ -56,6 +46,7 @@ import { ref } from "vue";
 import modal from "../components/modals/modal.vue";
 import GroupList from "../components/modals/GroupList.vue";
 import { useRouter } from "vue-router";
+import NavBar from "@/components/NavBar.vue";
 const showGroup = ref(false);
 const router = useRouter();
 function toProfile() {
@@ -68,44 +59,44 @@ function onGroupClick() {
 function onClose() {
   showGroup.value = false;
 }
+import { onBeforeMount, ref } from "vue";
+import type { IPost } from "../components/models/Post.model";
+const posts = ref();
+const photos = ref();
+const props = defineProps<{
+  post: IPost;
+}>();
+onBeforeMount(async () => {
+  await GetPosts(props);
+});
+async function GetPosts(event) {
+  posts.value = await fetch(
+    `https://jsonplaceholder.typicode.com/posts?_page=1&_limit=4`
+  ).then((res) => res.json());
+  // console.log(posts.value);
+  photos.value = await fetch(
+    `https://jsonplaceholder.typicode.com/photos?_page=1&_limit=4`
+  ).then((res) => res.json());
+  console.log(photos.value);
+}
 </script>
 <style lang="scss" scoped>
 .container {
   display: flex;
-  .navigation {
-    .nav__box {
-      background-color: #fff;
-      width: 100%;
-      max-width: 190px;
-      margin: 20px 20px;
-      border-radius: 20px;
-      margin-right: 100px;
-      .nav__items {
-        display: flex;
-        flex-direction: column;
-        a {
-          margin: 18px;
-          text-decoration: none;
-          color: black;
-          font-size: 18px;
-        }
-      }
-    }
-  }
 
   .post__feed {
     margin: 0 auto;
     .post {
       background-color: #fff;
       width: 500px;
-      height: 500px;
+      height: fit-content;
       border-radius: 20px;
       padding: 15px;
       margin-top: 20px;
 
       .user__info {
         display: flex;
-        width: 200px;
+        width: 100%;
         .user__avatar {
           width: 50px;
           img {
@@ -113,8 +104,33 @@ function onClose() {
             height: 50px;
           }
         }
+        .user__info--text {
+          width: 80%;
+          .user__name {
+            width: fit-content;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+          .user__group {
+            width: fit-content;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .user__stars {
+          display: flex;
+          align-items: center;
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
       }
       .post__image {
+        margin: 0 auto;
         width: 350px;
         height: 350px;
 
@@ -126,6 +142,8 @@ function onClose() {
       .post__footer {
         margin-top: 5px;
         margin-left: 20px;
+        .date__post {
+        }
       }
     }
   }

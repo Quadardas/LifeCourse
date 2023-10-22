@@ -5,6 +5,8 @@ export interface IPost {
   postDate: string;
   section: string;
   photo: IPhoto;
+  data: string;
+  tag: string;
 }
 
 export interface IPhoto {

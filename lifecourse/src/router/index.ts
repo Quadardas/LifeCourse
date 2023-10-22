@@ -21,6 +21,12 @@ const router = createRouter({
 
       component: () => import("../pages/ProfilePage.vue"),
     },
+    {
+      path: "/main",
+      name: "main",
+
+      component: () => import("../pages/MainPage.vue"),
+    },
   ],
 });
 
