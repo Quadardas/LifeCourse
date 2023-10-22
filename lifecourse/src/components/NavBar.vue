@@ -4,7 +4,7 @@
       <nav class="nav__items">
         <a href="/feed">лента</a>
         <a href="/profile">профиль</a>
-        <a href="">рейтинг</a>
+        <a href="/rating">рейтинг</a>
         <a href="">чаты</a>
         <a href="">вакансии</a>
       </nav>

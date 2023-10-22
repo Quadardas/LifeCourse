@@ -27,6 +27,12 @@ const router = createRouter({
 
       component: () => import("../pages/MainPage.vue"),
     },
+    {
+      path: "/rating",
+      name: "rating",
+
+      component: () => import("../pages/RatingPage.vue"),
+    },
   ],
 });
 

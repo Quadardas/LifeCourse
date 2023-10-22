@@ -10,14 +10,15 @@
 <script setup lang="ts">
 import { onBeforeMount } from "vue";
 import { RouterLink, RouterView, useRouter } from "vue-router";
-import router from "./router";
 import Header from "./components/Header.vue";
+const router = useRouter();
+
 function toMainPage() {
   router.push("/main");
 }
-// const router = useRouter();
+
 // onBeforeMount(() => {
-//   router.push("/login");
+//   router.push("/main");
 // });
 </script>
 <style lang="scss" scoped>
