@@ -6,7 +6,7 @@
         <a href="/profile">профиль</a>
         <a href="/rating">рейтинг</a>
         <a href="">чаты</a>
-        <a href="">вакансии</a>
+        <a href="/vacancies">вакансии</a>
       </nav>
     </div>
     <div class="nav__box">
