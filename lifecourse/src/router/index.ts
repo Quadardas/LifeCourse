@@ -39,6 +39,12 @@ const router = createRouter({
 
       component: () => import("../pages/VacanciesPage.vue"),
     },
+    {
+      path: "/vac",
+      name: "vac",
+
+      component: () => import("../pages/VacPage.vue"),
+    },
   ],
 });
 

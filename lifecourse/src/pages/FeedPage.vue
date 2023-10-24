@@ -42,11 +42,12 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
 import modal from "../components/modals/modal.vue";
 import GroupList from "../components/modals/GroupList.vue";
 import { useRouter } from "vue-router";
 import NavBar from "@/components/NavBar.vue";
+import { onBeforeMount, ref } from "vue";
+import type { IPost } from "../components/models/Post.model";
 const showGroup = ref(false);
 const router = useRouter();
 function toProfile() {
@@ -59,10 +60,9 @@ function onGroupClick() {
 function onClose() {
   showGroup.value = false;
 }
-import { onBeforeMount, ref } from "vue";
-import type { IPost } from "../components/models/Post.model";
+
 const posts = ref();
-const photos = ref();
+
 const props = defineProps<{
   post: IPost;
 }>();
@@ -74,10 +74,6 @@ async function GetPosts(event) {
     `https://jsonplaceholder.typicode.com/posts?_page=1&_limit=4`
   ).then((res) => res.json());
   // console.log(posts.value);
-  photos.value = await fetch(
-    `https://jsonplaceholder.typicode.com/photos?_page=1&_limit=4`
-  ).then((res) => res.json());
-  console.log(photos.value);
 }
 </script>
 <style lang="scss" scoped>

@@ -1,0 +1,73 @@
+import type { IUser } from "@/components/models/User.model";
+export const USER: Array<IUser> = [
+  {
+    id: 1,
+    name: "Isabelle Hall",
+    city: "Gwenborough",
+    univercity: "ОГУ",
+    rating: 263,
+  },
+  {
+    id: 2,
+    name: "Myrtle Pittman",
+    city: "Wisokyburgh",
+    univercity: "ОГУ",
+    rating: 261,
+  },
+  {
+    id: 3,
+    name: "Ivan Miller",
+    city: "McKenziehaven",
+    univercity: "ОГУ",
+    rating: 255,
+  },
+  {
+    id: 4,
+    name: "Olga Scott",
+    city: "South Elvis",
+    univercity: "ОГУ",
+    rating: 233,
+  },
+  {
+    id: 5,
+    name: "Troy Sparks",
+    city: "Roscoeview",
+    univercity: "ОГУ",
+    rating: 204,
+  },
+  {
+    id: 6,
+    name: "Lizzie Park",
+    city: "South Christy",
+    univercity: "ОГУ",
+    rating: 277,
+  },
+  {
+    id: 7,
+    name: "Earl Padilla",
+    city: "Howemouth",
+    univercity: "ОГУ",
+    rating: 213,
+  },
+  {
+    id: 8,
+    name: "Logan Perkins",
+    city: "Aliyaview",
+    univercity: "ОГУ",
+    rating: 228,
+  },
+  {
+    id: 9,
+    name: "Herman Shaw",
+    city: "Bartholomebury",
+    univercity: "ОГУ",
+    rating: 219,
+  },
+  {
+    id: 10,
+    name: "Jeffery Gibson",
+    city: "Lebsackbury",
+    univercity: "ОГУ",
+    rating: 268,
+  },
+];

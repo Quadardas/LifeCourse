@@ -4,29 +4,26 @@
     <div class="vacancies__feed">
       <div
         class="post"
-        @click="openVac"
-        v-for="vac in vacancies"
+        v-for="vac in vacancies.slice(0, 1)"
         :key="vac.id"
         :vac="vac"
       >
-        <div class="company__info">
-          <div class="company__logo">
-            <img src="../img/no-image.png" alt="" />
-          </div>
-          <div class="company__name">{{ vac.companyName }}</div>
-          <div class="peculiarities">{{ vac.peculiarities }}</div>
-          <div class="favorite">
-            <img src="../img/sticker (2).png" alt="" />
-          </div>
-        </div>
         <div class="vac__info">
           <div class="job-title">
             {{ vac.jobTitle }}
-            <div class="job_title__description">{{ vac.jobDescription }}</div>
+            <div class="job_title__description">
+              Обязанности: {{ vac.jobDescription }}
+            </div>
           </div>
-          <div class="schedule">{{ vac.schedule }}</div>
+          <div class="btns">
+            <button class="response__btn">Откликнуться</button>
+            <div class="favorite">
+              <img src="../img/sticker (2).png" alt="" />
+            </div>
+          </div>
+          <div class="schedule">График {{ vac.schedule }}</div>
           <div class="salary">{{ vac.salary }}</div>
-          <div class="comment">{{ vac.comment }}</div>
+          <div class="comment">Описание: {{ vac.comment }}</div>
           <div class="city">
             <img src="../img/sticker (1).png" alt="" />{{ vac.city }}
           </div>
@@ -40,51 +37,48 @@
 import NavBar from "@/components/NavBar.vue";
 import { VAC } from "../constants/vacancies.const";
 import { ref } from "vue";
-import router from "../router";
 
 const vacancies = ref(VAC);
-
-function openVac() {
-  router.push("/vac");
-}
 </script>
 <style lang="scss" scoped>
 .container {
   display: flex;
   .vacancies__feed {
     margin: 20px auto;
-    height: 100%;
+    // height: 100%;
     background-color: lightgray;
     padding: 15px 15px;
     border-radius: 20px;
 
     .post {
       background-color: #fff;
-      width: 450px;
-      height: fit-content;
-      border-radius: 20px;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
       padding: 15px;
-      margin-bottom: 15px;
+      //   margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
 
-      .company__info {
-        display: flex;
+      .vac__info {
         width: 100%;
-
-        .company__logo {
-          img {
-            width: 40px;
-            height: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        .btns {
+          display: flex;
+          .response__btn {
+            background-color: #87b23c;
+            border: none;
+            border-radius: 10px;
           }
-        }
-        .favorite {
-          img {
-            width: 30px;
-            height: 30px;
+          .favorite {
+            margin-left: 30px;
+            img {
+              width: 30px;
+              height: 30px;
+            }
           }
-        }
-        .company__name {
-          width: 80%;
-          font-weight: 800;
         }
       }
       .job-title {
