@@ -1,91 +1,93 @@
 <template>
-  <div class="container">
+  <div style="display: flex">
     <NavBar />
-    <div class="profile__feed">
-      <div class="profile">
-        <div class="user__info">
-          <div class="user__avatar">
-            <img src="../img/no-avatar.png" alt="" />
-          </div>
-          <div class="user__info--text">
-            <div class="user__name">**Имя пользователя**</div>
-            <div class="user__surname">**Фамилия пользователя**</div>
-            <div class="educ__info">
-              <div class="user__facult">**Факультет**</div>
-              <div class="user__cours">**Курс**</div>
-              <div class="user__group">**группа**</div>
+    <div class="container">
+      <div class="profile__feed">
+        <div class="profile">
+          <div class="user__info">
+            <div class="user__avatar">
+              <img src="../img/no-avatar.png" alt="" />
+            </div>
+            <div class="user__info--text">
+              <div class="user__name">**Имя пользователя**</div>
+              <div class="user__surname">**Фамилия пользователя**</div>
+              <div class="educ__info">
+                <div class="user__facult">**Факультет**</div>
+                <div class="user__cours">**Курс**</div>
+                <div class="user__group">**группа**</div>
+              </div>
+            </div>
+            <div class="star__count">
+              <img src="../img/icons/star.jpg" alt="" />
+              <div>20</div>
             </div>
           </div>
-          <div class="star__count">
-            <img src="../img/icons/star.jpg" alt="" />
-            <div>20</div>
+          <div class="about__yourself">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto
+            consequatur eos, quidem obcaecati harum libero exercitationem saepe
+            optio beatae hic.
           </div>
-        </div>
-        <div class="about__yourself">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto
-          consequatur eos, quidem obcaecati harum libero exercitationem saepe
-          optio beatae hic.
-        </div>
-        <div class="achievements">
-          <ul>
-            <li>
-              <div class="ach__lvl">1 уровень</div>
-              <img src="../img/icons/nauch.jpg" alt="" />
-              <div class="stars">
-                <img class="ach__stars" src="../img/icons/star.jpg" alt="" />
-                <div>10</div>
+          <div class="achievements">
+            <ul>
+              <li>
+                <div class="ach__lvl">1 уровень</div>
+                <img src="../img/icons/nauch.jpg" alt="" />
+                <div class="stars">
+                  <img class="ach__stars" src="../img/icons/star.jpg" alt="" />
+                  <div>10</div>
+                </div>
+              </li>
+              <li>
+                <div class="ach__lvl">1 уровень</div>
+                <img src="../img/icons/tvorch.jpg" alt="" />
+                <div class="stars">
+                  <img class="ach__stars" src="../img/icons/star.jpg" alt="" />
+                  <div>10</div>
+                </div>
+              </li>
+              <li>
+                <div class="ach__lvl">1 уровень</div>
+                <img src="../img/icons/sport.jpg" alt="" />
+                <div class="stars">
+                  <img class="ach__stars" src="../img/icons/star.jpg" alt="" />
+                  <div>10</div>
+                </div>
+              </li>
+              <li>
+                <div class="ach__lvl">1 уровень</div>
+                <img src="../img/icons/volont.jpg" alt="" />
+                <div class="stars">
+                  <img class="ach__stars" src="../img/icons/star.jpg" alt="" />
+                  <div>10</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="profile__posts"
+            v-for="post in posts"
+            :key="post.id"
+            :post="post"
+          >
+            <div class="profile__post--one">
+              <div class="post__image">
+                <img src="../img/no-image.png" alt="" />
               </div>
-            </li>
-            <li>
-              <div class="ach__lvl">1 уровень</div>
-              <img src="../img/icons/tvorch.jpg" alt="" />
-              <div class="stars">
-                <img class="ach__stars" src="../img/icons/star.jpg" alt="" />
-                <div>10</div>
+              <div class="post__description">{{ post.body }}</div>
+              <div class="post__footer">
+                <div class="post__tag">#спортивные достижения</div>
+                <div class="post__date">01.01.2023</div>
               </div>
-            </li>
-            <li>
-              <div class="ach__lvl">1 уровень</div>
-              <img src="../img/icons/sport.jpg" alt="" />
-              <div class="stars">
-                <img class="ach__stars" src="../img/icons/star.jpg" alt="" />
-                <div>10</div>
-              </div>
-            </li>
-            <li>
-              <div class="ach__lvl">1 уровень</div>
-              <img src="../img/icons/volont.jpg" alt="" />
-              <div class="stars">
-                <img class="ach__stars" src="../img/icons/star.jpg" alt="" />
-                <div>10</div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div
-          class="profile__posts"
-          v-for="post in posts"
-          :key="post.id"
-          :post="post"
-        >
-          <div class="profile__post--one">
-            <div class="post__image">
-              <img src="../img/no-image.png" alt="" />
-            </div>
-            <div class="post__description">{{ post.body }}</div>
-            <div class="post__footer">
-              <div class="post__tag">#спортивные достижения</div>
-              <div class="post__date">01.01.2023</div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="buttons">
-        <div class="follow__btn">
-          <img src="../img/icons/heart.svg" alt="" />
-        </div>
-        <div class="message__btn">
-          <img src="../img/icons/comment-dots.svg" alt="" />
+        <div class="buttons">
+          <div class="follow__btn">
+            <img src="../img/icons/heart.svg" alt="" />
+          </div>
+          <div class="message__btn">
+            <img src="../img/icons/comment-dots.svg" alt="" />
+          </div>
         </div>
       </div>
     </div>
@@ -118,6 +120,7 @@ async function GetPosts(event) {
 <style lang="scss" scoped>
 .container {
   display: flex;
+  margin: 0 auto;
 
   .profile__feed {
     display: flex;

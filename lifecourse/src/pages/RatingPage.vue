@@ -1,16 +1,18 @@
 <template>
-  <div class="container">
+  <div style="display: flex">
     <NavBar />
-    <div class="rating__feed">
-      <h1>Список лучших студентов</h1>
-      <div class="user" v-for="user in users" :key="user.id" :user="user">
-        <div class="user__avatar">
-          <img src="../img/no-avatar.png" alt="" />
+    <div class="container">
+      <div class="rating__feed">
+        <h1>Список лучших студентов</h1>
+        <div class="user" v-for="user in users" :key="user.id" :user="user">
+          <div class="user__avatar">
+            <img src="../img/no-avatar.png" alt="" />
+          </div>
+          <div class="user__name">{{ user.name }}</div>
+          <div class="user__city">{{ user.city }}</div>
+          <div class="user__uni">{{ user.univercity }}</div>
+          <div class="user__rating">{{ user.rating }}</div>
         </div>
-        <div class="user__name">{{ user.name }}</div>
-        <div class="user__city">{{ user.city }}</div>
-        <div class="user__uni">{{ user.univercity }}</div>
-        <div class="user__rating">{{ user.rating }}</div>
       </div>
     </div>
   </div>
@@ -38,6 +40,7 @@ users.value.sort((a, b) => b.rating - a.rating);
 <style lang="scss" scoped>
 .container {
   display: flex;
+  margin: 0 auto;
   .rating__feed {
     display: flex;
     width: fit-content;

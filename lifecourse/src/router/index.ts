@@ -45,6 +45,24 @@ const router = createRouter({
 
       component: () => import("../pages/VacPage.vue"),
     },
+    {
+      path: "/market",
+      name: "market",
+
+      component: () => import("../pages/MarketPage.vue"),
+    },
+    {
+      path: "/chat",
+      name: "chat",
+
+      component: () => import("../pages/ChatPage.vue"),
+    },
+    {
+      path: "/Support",
+      name: "Support",
+
+      component: () => import("../pages/SupportPage.vue"),
+    },
   ],
 });
 

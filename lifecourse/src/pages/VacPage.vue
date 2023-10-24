@@ -1,31 +1,33 @@
 <template>
-  <div class="container">
+  <div style="display: flex">
     <NavBar />
-    <div class="vacancies__feed">
-      <div
-        class="post"
-        v-for="vac in vacancies.slice(0, 1)"
-        :key="vac.id"
-        :vac="vac"
-      >
-        <div class="vac__info">
-          <div class="job-title">
-            {{ vac.jobTitle }}
-            <div class="job_title__description">
-              Обязанности: {{ vac.jobDescription }}
+    <div class="container">
+      <div class="vacancies__feed">
+        <div
+          class="post"
+          v-for="vac in vacancies.slice(0, 1)"
+          :key="vac.id"
+          :vac="vac"
+        >
+          <div class="vac__info">
+            <div class="job-title">
+              {{ vac.jobTitle }}
+              <div class="job_title__description">
+                Обязанности: {{ vac.jobDescription }}
+              </div>
             </div>
-          </div>
-          <div class="btns">
-            <button class="response__btn">Откликнуться</button>
-            <div class="favorite">
-              <img src="../img/sticker (2).png" alt="" />
+            <div class="btns">
+              <button class="response__btn">Откликнуться</button>
+              <div class="favorite">
+                <img src="../img/sticker (2).png" alt="" />
+              </div>
             </div>
-          </div>
-          <div class="schedule">График {{ vac.schedule }}</div>
-          <div class="salary">{{ vac.salary }}</div>
-          <div class="comment">Описание: {{ vac.comment }}</div>
-          <div class="city">
-            <img src="../img/sticker (1).png" alt="" />{{ vac.city }}
+            <div class="schedule">График {{ vac.schedule }}</div>
+            <div class="salary">{{ vac.salary }}</div>
+            <div class="comment">Описание: {{ vac.comment }}</div>
+            <div class="city">
+              <img src="../img/sticker (1).png" alt="" />{{ vac.city }}
+            </div>
           </div>
         </div>
       </div>
@@ -43,6 +45,7 @@ const vacancies = ref(VAC);
 <style lang="scss" scoped>
 .container {
   display: flex;
+  margin: 0 auto;
   .vacancies__feed {
     margin: 20px auto;
     // height: 100%;

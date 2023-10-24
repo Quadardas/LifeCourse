@@ -1,34 +1,36 @@
 <template>
-  <div class="container">
+  <div style="display: flex">
     <NavBar />
-    <div class="vacancies__feed">
-      <div
-        class="post"
-        @click="openVac"
-        v-for="vac in vacancies"
-        :key="vac.id"
-        :vac="vac"
-      >
-        <div class="company__info">
-          <div class="company__logo">
-            <img src="../img/no-image.png" alt="" />
+    <div class="container">
+      <div class="vacancies__feed">
+        <div
+          class="post"
+          @click="openVac"
+          v-for="vac in vacancies"
+          :key="vac.id"
+          :vac="vac"
+        >
+          <div class="company__info">
+            <div class="company__logo">
+              <img src="../img/no-image.png" alt="" />
+            </div>
+            <div class="company__name">{{ vac.companyName }}</div>
+            <div class="peculiarities">{{ vac.peculiarities }}</div>
+            <div class="favorite">
+              <img src="../img/sticker (2).png" alt="" />
+            </div>
           </div>
-          <div class="company__name">{{ vac.companyName }}</div>
-          <div class="peculiarities">{{ vac.peculiarities }}</div>
-          <div class="favorite">
-            <img src="../img/sticker (2).png" alt="" />
-          </div>
-        </div>
-        <div class="vac__info">
-          <div class="job-title">
-            {{ vac.jobTitle }}
-            <div class="job_title__description">{{ vac.jobDescription }}</div>
-          </div>
-          <div class="schedule">{{ vac.schedule }}</div>
-          <div class="salary">{{ vac.salary }}</div>
-          <div class="comment">{{ vac.comment }}</div>
-          <div class="city">
-            <img src="../img/sticker (1).png" alt="" />{{ vac.city }}
+          <div class="vac__info">
+            <div class="job-title">
+              {{ vac.jobTitle }}
+              <div class="job_title__description">{{ vac.jobDescription }}</div>
+            </div>
+            <div class="schedule">{{ vac.schedule }}</div>
+            <div class="salary">{{ vac.salary }}</div>
+            <div class="comment">{{ vac.comment }}</div>
+            <div class="city">
+              <img src="../img/sticker (1).png" alt="" />{{ vac.city }}
+            </div>
           </div>
         </div>
       </div>
@@ -51,6 +53,7 @@ function openVac() {
 <style lang="scss" scoped>
 .container {
   display: flex;
+  margin: 0 auto;
   .vacancies__feed {
     margin: 20px auto;
     height: 100%;

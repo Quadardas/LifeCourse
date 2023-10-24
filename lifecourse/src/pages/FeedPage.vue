@@ -1,40 +1,44 @@
 <template>
-  <div class="container">
+  <div style="display: flex">
     <NavBar />
-    <div class="post__feed">
-      <div class="post" v-for="post in posts" :key="post.id" :post="post">
-        <div class="user__info">
-          <div class="user__avatar">
-            <img src="../img/no-avatar.png" alt="" />
-          </div>
-          <div class="user__info--text">
-            <div class="user__name" @click="toProfile">*Имя пользователя*</div>
+    <div class="container">
+      <div class="post__feed">
+        <div class="post" v-for="post in posts" :key="post.id" :post="post">
+          <div class="user__info">
+            <div class="user__avatar">
+              <img src="../img/no-avatar.png" alt="" />
+            </div>
+            <div class="user__info--text">
+              <div class="user__name" @click="toProfile">
+                *Имя пользователя*
+              </div>
 
-            <div class="user__group" @click="onGroupClick">группа</div>
-            <modal
-              :show="showGroup"
-              :hideOkButton="true"
-              :modalComponent="GroupList"
-              @close="onClose"
-              ><template #header>
-                <h3>Список группы **Название группы**</h3>
-              </template></modal
-            >
+              <div class="user__group" @click="onGroupClick">группа</div>
+              <modal
+                :show="showGroup"
+                :hideOkButton="true"
+                :modalComponent="GroupList"
+                @close="onClose"
+                ><template #header>
+                  <h3>Список группы **Название группы**</h3>
+                </template></modal
+              >
+            </div>
+            <div class="user__stars">
+              10
+              <img src="../img/icons/star.jpg" alt="" />
+            </div>
           </div>
-          <div class="user__stars">
-            10
-            <img src="../img/icons/star.jpg" alt="" />
+          <div class="post__image">
+            <img src="../img/no-image.png" alt="" />
           </div>
-        </div>
-        <div class="post__image">
-          <img src="../img/no-image.png" alt="" />
-        </div>
-        <div class="about__post">
-          {{ post.body }}
-        </div>
-        <div class="post__footer">
-          <div class="post__tag">#спортивные достижения</div>
-          <div class="date__post">01.01.2023</div>
+          <div class="about__post">
+            {{ post.body }}
+          </div>
+          <div class="post__footer">
+            <div class="post__tag">#спортивные достижения</div>
+            <div class="date__post">01.01.2023</div>
+          </div>
         </div>
       </div>
     </div>
@@ -79,6 +83,7 @@ async function GetPosts(event) {
 <style lang="scss" scoped>
 .container {
   display: flex;
+  margin: 0 auto;
 
   .post__feed {
     margin: 0 auto;
